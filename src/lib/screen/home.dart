@@ -14,6 +14,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final MessageService messageService = MessageService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,8 +23,8 @@ class _HomeState extends State<Home> {
         elevation: 0,
         backgroundColor: accentColor,
         toolbarHeight: 120,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 10.0),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 10.0),
           child: Text(
             "Chat with \nyour friends",
             style: TextStyle(
@@ -41,7 +43,9 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             buildSuggestedContactsWidget(),
-            buildRecentChatsWidget(),
+            Expanded(
+              child: buildRecentChatsWidget(),
+            ),
           ],
         ),
       ),
@@ -49,6 +53,8 @@ class _HomeState extends State<Home> {
   }
 
   Widget buildSuggestedContactsWidget() {
+    List<User> users = messageService.getUsers();
+
     return Container(
       height: 100,
       child: Padding(
@@ -58,12 +64,12 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.black12,
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(14.0),
+                child: const Padding(
+                  padding: EdgeInsets.all(14.0),
                   child: Icon(
                     Icons.search,
                     color: Colors.white,
@@ -90,21 +96,22 @@ class _HomeState extends State<Home> {
   }
 
   Widget buildRecentChatsWidget() {
+    List<Message> chats = messageService.getChats();
+
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40.0),
-          topRight: Radius.circular(40.0),
+          topLeft: Radius.circular(36.0),
+          topRight: Radius.circular(36.0),
         ),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40.0),
-          topRight: Radius.circular(40.0),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(36.0),
+          topRight: Radius.circular(36.0),
         ),
         child: Container(
-          height: 450,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 0.0),
             child: ListView.builder(

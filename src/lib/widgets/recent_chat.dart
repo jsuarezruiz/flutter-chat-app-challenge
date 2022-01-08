@@ -17,7 +17,7 @@ class RecentChat extends StatelessWidget {
         ),
       ),
       child: Container(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           vertical: 10,
         ),
         child: ListTile(
@@ -42,7 +42,7 @@ class RecentChat extends StatelessWidget {
                 children: [
                   Text(
                     message.sender!.name!,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       fontFamily: 'Metropolis Black',
                       fontWeight: FontWeight.bold,
@@ -51,7 +51,7 @@ class RecentChat extends StatelessWidget {
                   ),
                   Text(
                     message.time!,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       fontFamily: 'Metropolis Regular',
                       fontWeight: FontWeight.normal,
@@ -67,7 +67,7 @@ class RecentChat extends StatelessWidget {
           ),
           subtitle: Text(
             message.text!,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.blueGrey,
               fontFamily: 'Metropolis Light',
               fontSize: 14.0,

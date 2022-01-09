@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_app_challenge/models/message.dart';
-import 'package:flutter_chat_app_challenge/screen/details.dart';
+import 'package:flutter_chat_app_challenge/screens/details.dart';
 
 class RecentChat extends StatelessWidget {
   final Message message;
@@ -60,7 +60,7 @@ class RecentChat extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8.0,
               ),
             ],

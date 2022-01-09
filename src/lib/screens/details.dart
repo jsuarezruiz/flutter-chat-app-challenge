@@ -39,7 +39,7 @@ class Details extends StatelessWidget {
       children: [
         InkWell(
           onTap: () => Navigator.of(context).pop(),
-          child: Text(
+          child: const Text(
             "Back",
             style: TextStyle(
               fontSize: 16,
@@ -49,7 +49,7 @@ class Details extends StatelessWidget {
             ),
           ),
         ),
-        Text(
+        const Text(
           "Search",
           style: TextStyle(
             fontSize: 16,
@@ -63,66 +63,64 @@ class Details extends StatelessWidget {
   }
 
   Widget buildContactInformationWidget() {
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 32,
-          horizontal: 16,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 24.0),
-              child: Container(
-                width: 200.0,
-                child: Text(
-                  user.name!,
-                  style: const TextStyle(
-                    fontSize: 32,
-                    fontFamily: 'Metropolis Black',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    wordSpacing: 1.1,
-                    letterSpacing: 1.1,
-                  ),
-                  maxLines: 2,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 32,
+        horizontal: 16,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: SizedBox(
+              width: 200.0,
+              child: Text(
+                user.name!,
+                style: const TextStyle(
+                  fontSize: 32,
+                  fontFamily: 'Metropolis Black',
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  wordSpacing: 1.1,
+                  letterSpacing: 1.1,
                 ),
+                maxLines: 2,
               ),
             ),
-            Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white30,
-                  ),
-                  child: const Icon(
-                    Icons.phone,
-                    color: Colors.white,
-                    size: 24,
-                  ),
+          ),
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white30,
                 ),
-                SizedBox(
-                  width: 12,
+                child: const Icon(
+                  Icons.phone,
+                  color: Colors.white,
+                  size: 24,
                 ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white30,
-                  ),
-                  child: Icon(
-                    Icons.videocam_sharp,
-                    color: Colors.white,
-                    size: 24,
-                  ),
+              ),
+              const SizedBox(
+                width: 12,
+              ),
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white30,
                 ),
-              ],
-            ),
-          ],
-        ),
+                child: const Icon(
+                  Icons.videocam_sharp,
+                  color: Colors.white,
+                  size: 24,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

@@ -55,7 +55,7 @@ class _HomeState extends State<Home> {
   Widget buildSuggestedContactsWidget() {
     List<User> users = messageService.getUsers();
 
-    return Container(
+    return SizedBox(
       height: 100,
       child: Padding(
         padding: const EdgeInsets.only(left: 10.0),
@@ -111,16 +111,14 @@ class _HomeState extends State<Home> {
           topLeft: Radius.circular(36.0),
           topRight: Radius.circular(36.0),
         ),
-        child: Container(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 0.0),
-            child: ListView.builder(
-              itemCount: chats.length,
-              itemBuilder: (BuildContext context, int index) {
-                final Message message = chats[index];
-                return RecentChat(message: message);
-              },
-            ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 0.0),
+          child: ListView.builder(
+            itemCount: chats.length,
+            itemBuilder: (BuildContext context, int index) {
+              final Message message = chats[index];
+              return RecentChat(message: message);
+            },
           ),
         ),
       ),

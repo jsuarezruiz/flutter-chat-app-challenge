@@ -51,10 +51,10 @@ class ChatMessage extends StatelessWidget {
                     right: 50,
                     top: 10,
                     bottom: 10,
-                    left: 6,
+                    left: 10,
                   ),
                   decoration: const BoxDecoration(
-                    color: Colors.black12,
+                    color: Color(0xFFE0E0E0),
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(40.0),
                       topLeft: Radius.circular(40.0),
